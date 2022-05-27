@@ -55,12 +55,6 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	if(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13) == GPIO_PIN_RESET){
-		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-	}
-}
 /* USER CODE END 0 */
 
 /**
@@ -100,8 +94,13 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-	  HAL_Delay(1000);
+	   if(!(HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13))) {
+		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,1);
+	  }
+	  else{
+		  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,0);
+	  }
+	  HAL_Delay(100);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
