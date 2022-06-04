@@ -1,0 +1,14 @@
+HAL_GPIO_TogglePin(Port<A...G>,Pin<0...15>)
+HAL_GPIO_ReadPin(Port<A...G>,Pin<0...15>)  => return Pin State
+HAL_GPIO_WritePin(Port<A...G>,Pin<0...15>,Pin State)
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+
+HAL_GPIO => class 비슷한 개념
+Toggle Pin => method
+
+Alternate :  칩 안에 기능을 넣어 놓고 그걸 가져와서 씀
+
+
+
+UART : 비동기 통신
+
